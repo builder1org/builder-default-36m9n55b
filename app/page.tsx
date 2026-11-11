@@ -1,7 +1,17 @@
+import { CategoryGrid } from "@/components/sections/category-grid";
+import { ContactCta } from "@/components/sections/contact-cta";
+import { FeaturedProducts } from "@/components/sections/featured-products";
+import { HomeHero } from "@/components/sections/home-hero";
+import { ValueStrip } from "@/components/sections/value-strip";
+
 export default function Home() {
   return (
-    <main className="mx-auto max-w-3xl px-6 py-16">
-      <p className="text-muted-foreground text-sm">Starter shell — pages and design are added by the agent.</p>
+    <main>
+      <HomeHero />
+      <CategoryGrid />
+      <FeaturedProducts />
+      <ValueStrip />
+      <ContactCta />
     </main>
   );
 }
