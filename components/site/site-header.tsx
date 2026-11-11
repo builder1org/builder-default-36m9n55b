@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, ShoppingCart, UserRound, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { CartHeaderLink } from "@/components/site/cart-header-link";
 import { Logo } from "@/components/site/logo";
 import { Button } from "@/components/ui/button";
 import { navLinks, siteConfig } from "@/lib/site-data";
@@ -35,16 +36,7 @@ export function SiteHeader() {
           <Logo variant="wordmark" className="justify-self-center" />
 
           <div className="justify-self-end">
-            <Link
-              href="/products"
-              className="text-foreground hover:text-primary inline-flex items-center gap-1.5 text-[11px] font-medium"
-            >
-              <span className="inline-flex items-center gap-0.5">
-                <ShoppingCart className="size-[1.35rem]" strokeWidth={1.5} aria-hidden />
-                <UserRound className="-ms-1 size-4" strokeWidth={1.5} aria-hidden />
-              </span>
-              <span className="hidden min-[380px]:inline">ورود / ثبت‌نام</span>
-            </Link>
+            <CartHeaderLink />
           </div>
         </div>
 

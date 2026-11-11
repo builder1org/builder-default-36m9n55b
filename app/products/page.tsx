@@ -1,23 +1,23 @@
 import { Suspense } from "react";
 import { ProductCatalog } from "@/components/sections/product-catalog";
-import { SectionHeading } from "@/components/site/section-heading";
 
 export const metadata = {
   title: "محصولات",
-  description: "مرور دسته‌ها و نمونه محصولات فروشگاه لوازم آرایشی.",
+  description: "مرور، جستجو و انتخاب محصولات لوازم آرایشی.",
 };
 
 export default function ProductsPage() {
   return (
-    <main className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-      <SectionHeading
-        title="محصولات"
-        description="فیلتر دایره‌ای دسته‌ها؛ جزئیات پس از تایید شما به‌روز می‌شود."
-        className="mb-12"
-      />
-      <Suspense fallback={<p className="text-muted-foreground text-sm">در حال بارگذاری…</p>}>
-        <ProductCatalog />
-      </Suspense>
+    <main className="bg-muted/20 min-h-[70vh]">
+      <div className="border-border/70 bg-background border-b px-4 py-6 sm:px-6">
+        <h1 className="text-center text-lg font-semibold tracking-tight sm:text-xl">فروشگاه</h1>
+        <p className="text-muted-foreground mt-1 text-center text-xs">انتخاب دسته یا جستجو، سپس مشاهده جزئیات محصول</p>
+      </div>
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10">
+        <Suspense fallback={<p className="text-muted-foreground text-sm">در حال بارگذاری…</p>}>
+          <ProductCatalog />
+        </Suspense>
+      </div>
     </main>
   );
 }

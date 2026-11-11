@@ -3,25 +3,31 @@
 import { useSearchParams } from "next/navigation";
 import { CategoryCircle } from "@/components/site/category-circle";
 import { ProductCard } from "@/components/site/product-card";
-import { categories, products, type CategoryId } from "@/lib/site-data";
+import { SiteSearch } from "@/components/site/site-search";
+import { filterProducts } from "@/lib/products";
+import { categories, type CategoryId } from "@/lib/site-data";
 
 const allId = "all" as const;
 
 export function ProductCatalog() {
   const searchParams = useSearchParams();
   const raw = searchParams.get("category") as CategoryId | null;
+  const query = searchParams.get("q");
   const validIds = new Set(categories.map((c) => c.id));
   const active = raw && validIds.has(raw) ? raw : allId;
 
-  const filtered =
-    active === allId ? products : products.filter((p) => p.category === active);
+  const filtered = filterProducts({
+    category: active === allId ? null : active,
+    query,
+  });
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-10">
+      <SiteSearch />
       <div>
-        <p className="text-muted-foreground mb-5 text-center text-xs font-medium">فیلتر دسته</p>
+        <p className="text-muted-foreground mb-4 text-xs font-medium">دسته‌ها</p>
         <ul
-          className="flex justify-start gap-5 overflow-x-auto pb-2 sm:flex-wrap sm:justify-center sm:gap-7"
+          className="scrollbar-hide flex gap-4 overflow-x-auto pb-1"
           role="list"
           aria-label="دسته محصول"
         >
@@ -49,10 +55,20 @@ export function ProductCatalog() {
           ))}
         </ul>
       </div>
+
+      <div className="flex items-center justify-between gap-2 text-xs">
+        <p className="text-muted-foreground">
+          {filtered.length} محصول
+          {query?.trim() ? ` · جستجو: «${query.trim()}»` : ""}
+        </p>
+      </div>
+
       {filtered.length === 0 ? (
-        <p className="text-muted-foreground text-center text-sm">در این دسته محصولی ثبت نشده است.</p>
+        <p className="text-muted-foreground border-border rounded-2xl border py-12 text-center text-sm">
+          محصولی یافت نشد. دسته یا عبارت جستجو را تغییر دهید.
+        </p>
       ) : (
-        <ul className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 lg:grid-cols-3">
           {filtered.map((product) => (
             <li key={product.slug}>
               <ProductCard product={product} />

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { CartProvider } from "@/components/site/cart-provider";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { siteConfig } from "@/lib/site-data";
@@ -28,9 +29,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fa" dir="rtl">
       <body className={`${vazirmatn.variable} font-sans antialiased`}>
-        <SiteHeader />
-        <div className="min-h-[70vh]">{children}</div>
-        <SiteFooter />
+        <CartProvider>
+          <SiteHeader />
+          <div className="min-h-[70vh]">{children}</div>
+          <SiteFooter />
+        </CartProvider>
       </body>
     </html>
   );

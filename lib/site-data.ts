@@ -104,6 +104,8 @@ export type Product = {
   name: string;
   category: CategoryId;
   note: string;
+  description: string;
+  highlights: string[];
   priceLabel: string;
   badge?: string;
   hue: string;
@@ -115,6 +117,9 @@ export const products: Product[] = [
     name: "کرم‌پودر مخملی",
     category: "face",
     note: "پوشش سبک، مخصوص پوست معمولی",
+    description:
+      "فرمول سبک با پوشش قابل تنظیم برای استفاده روزانه. مناسب تست رنگ در فروشگاه قبل از خرید نهایی.",
+    highlights: ["بافت مخملی", "پوشش لایه‌ای", "مناسب آرایش روزمره"],
     priceLabel: "[قیمت]",
     badge: "پرفروش",
     hue: "from-rose-200/80 to-rose-100",
@@ -124,6 +129,8 @@ export const products: Product[] = [
     name: "رژگونه رز",
     category: "face",
     note: "رنگ طبیعی، ماندگاری بالا",
+    description: "رنگ‌دهی ملایم با امکان ترکیب برای گونه و استخوان گونه. برای انتخاب شید با ما تماس بگیرید.",
+    highlights: ["رنگ طبیعی", "بدون چربی اضافه", "ماندگاری مناسب"],
     priceLabel: "[قیمت]",
     hue: "from-pink-200/80 to-amber-50",
   },
@@ -132,6 +139,8 @@ export const products: Product[] = [
     name: "ریمل حجم‌دهنده",
     category: "eyes",
     note: "بدون گلوله شدن",
+    description: "برس جداکننده مژه برای حجم و طول ظاهری. قبل از استفاده، نمونه در فروشگاه قابل تست است.",
+    highlights: ["حجم‌دهی", "فرمول ضد گلوله", "پاک‌کنندگی آسان"],
     priceLabel: "[قیمت]",
     hue: "from-stone-300/70 to-stone-100",
   },
@@ -140,6 +149,8 @@ export const products: Product[] = [
     name: "پالت سایه خنثی",
     category: "eyes",
     note: "۱۲ رنگ روزمره و مجلسی",
+    description: "طیف خنثی برای آرایش روز و شب. شامل مات و شاین ملایم؛ مشاوره ترکیب رنگ در فروشگاه.",
+    highlights: ["۱۲ رنگ", "روز و مجلس", "قابل ترکیب"],
     priceLabel: "[قیمت]",
     badge: "جدید",
     hue: "from-amber-200/70 to-orange-50",
@@ -149,6 +160,8 @@ export const products: Product[] = [
     name: "رژ لب ساتن",
     category: "lips",
     note: "بافت نرم، رنگ‌دهی یکنواخت",
+    description: "بافت نرم با براقیت کنترل‌شده. برای هماهنگی با رنگ پوست، سویچ رنگ در فروشگاه انجام می‌شود.",
+    highlights: ["فینیش ساتن", "راحتی در لب", "رنگ‌دهی یکنواخت"],
     priceLabel: "[قیمت]",
     hue: "from-red-200/60 to-rose-50",
   },
@@ -157,6 +170,8 @@ export const products: Product[] = [
     name: "سرم آبرسان",
     category: "skin",
     note: "هیالورونیک اسید و ویتامین B5",
+    description: "مرحله آبرسانی قبل از کرم روزانه. مناسب انواع پوست؛ برای روتین شخصی با ما مشورت کنید.",
+    highlights: ["آبرسان", "جذب سریع", "زیر آرایش"],
     priceLabel: "[قیمت]",
     badge: "مراقبت",
     hue: "from-sky-200/60 to-cyan-50",
@@ -166,6 +181,8 @@ export const products: Product[] = [
     name: "ضدآفتاب سبک",
     category: "skin",
     note: "SPF ۵۰، بدون چربی اضافه",
+    description: "محافظت روزانه با بافت سبک و بدون وایت‌کست شدید. اطلاعات دقیق برچسب در بستهٔ فیزیکی.",
+    highlights: ["SPF ۵۰", "بافت سبک", "روزانه"],
     priceLabel: "[قیمت]",
     hue: "from-yellow-100/80 to-white",
   },
@@ -174,6 +191,8 @@ export const products: Product[] = [
     name: "اسپری بدن گلی",
     category: "fragrance",
     note: "رایحه گل‌های بهاری",
+    description: "ریزپاشی ملایم با نت گلی. تست رایحه در فروشگاه پیشنهاد می‌شود.",
+    highlights: ["رایحه گلی", "اسپری یکنواخت", "هدیه مناسب"],
     priceLabel: "[قیمت]",
     hue: "from-violet-200/50 to-pink-50",
   },
@@ -182,6 +201,8 @@ export const products: Product[] = [
     name: "ست براش حرفه‌ای",
     category: "tools",
     note: "۸ عدد، مو مصنوعی نرم",
+    description: "ست کامل برای صورت و چشم با نگهداری آسان. شست‌وشو و نگهداری در راهنمای بسته.",
+    highlights: ["۸ عدد براش", "مو نرم", "کیف همراه"],
     priceLabel: "[قیمت]",
     hue: "from-stone-200/80 to-amber-50",
   },
