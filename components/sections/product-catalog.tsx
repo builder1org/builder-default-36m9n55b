@@ -26,7 +26,14 @@ export function ProductCatalog() {
           aria-label="دسته محصول"
         >
           <li className="shrink-0">
-            <CategoryCircle href="/products" icon="all" label="همه" active={active === allId} />
+            <CategoryCircle
+              href="/products"
+              icon="all"
+              label="همه"
+              active={active === allId}
+              variant="store"
+              tint="bg-white"
+            />
           </li>
           {categories.map((cat) => (
             <li key={cat.id} className="shrink-0">
@@ -35,6 +42,8 @@ export function ProductCatalog() {
                 icon={cat.icon}
                 label={cat.title}
                 active={active === cat.id}
+                variant="store"
+                tint={cat.circleTint}
               />
             </li>
           ))}

@@ -8,8 +8,8 @@ export function FeaturedProducts() {
   const featured = products.slice(0, 6);
 
   return (
-    <section className="border-border/60 border-t">
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+    <section className="border-border/60 border-t bg-white">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
         <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading title="منتخب" description="نمونه نمایش؛ قیمت و تصویر پس از تایید شما." />
           <Link

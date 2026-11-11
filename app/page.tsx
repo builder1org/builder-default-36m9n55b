@@ -1,16 +1,12 @@
-import { CategoryGrid } from "@/components/sections/category-grid";
 import { ContactCta } from "@/components/sections/contact-cta";
 import { FeaturedProducts } from "@/components/sections/featured-products";
-import { HomeHero } from "@/components/sections/home-hero";
-import { ValueStrip } from "@/components/sections/value-strip";
+import { HomeStorefront } from "@/components/sections/home-storefront";
 
 export default function Home() {
   return (
     <main>
-      <HomeHero />
-      <CategoryGrid />
+      <HomeStorefront />
       <FeaturedProducts />
-      <ValueStrip />
       <ContactCta />
     </main>
   );
