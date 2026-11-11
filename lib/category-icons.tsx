@@ -3,6 +3,7 @@ import {
   Droplets,
   Eye,
   Flower2,
+  Grid2x2,
   Heart,
   Sparkles,
   type LucideIcon,
@@ -11,7 +12,10 @@ import type { categories } from "@/lib/site-data";
 
 type IconKey = (typeof categories)[number]["icon"];
 
-const map: Record<IconKey, LucideIcon> = {
+export type CategoryIconKey = IconKey | "all";
+
+const map: Record<CategoryIconKey, LucideIcon> = {
+  all: Grid2x2,
   sparkles: Sparkles,
   eye: Eye,
   lip: Heart,
@@ -20,7 +24,7 @@ const map: Record<IconKey, LucideIcon> = {
   brush: Brush,
 };
 
-export function CategoryIcon({ name, className }: { name: IconKey; className?: string }) {
+export function CategoryIcon({ name, className }: { name: CategoryIconKey; className?: string }) {
   const Icon = map[name];
   return <Icon className={className} aria-hidden />;
 }

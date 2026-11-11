@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
 import { siteConfig } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
@@ -8,16 +7,13 @@ export function Logo({ className }: { className?: string }) {
     <Link
       href="/"
       className={cn(
-        "group inline-flex items-center gap-2.5 text-foreground transition-opacity hover:opacity-90",
+        "text-foreground inline-flex items-baseline gap-2 transition-opacity hover:opacity-80",
         className,
       )}
     >
-      <span className="bg-primary text-primary-foreground flex size-9 items-center justify-center rounded-full shadow-sm">
-        <Sparkles className="size-4" aria-hidden />
-      </span>
-      <span className="flex flex-col leading-tight">
-        <span className="text-base font-extrabold">{siteConfig.name}</span>
-        <span className="text-muted-foreground text-[0.65rem] font-medium">{siteConfig.tagline}</span>
+      <span className="text-sm font-semibold tracking-tight">{siteConfig.name}</span>
+      <span className="text-muted-foreground hidden text-[10px] font-normal sm:inline">
+        {siteConfig.tagline}
       </span>
     </Link>
   );

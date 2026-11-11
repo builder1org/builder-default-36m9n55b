@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, Phone, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/site/logo";
 import { Button } from "@/components/ui/button";
 import { navLinks, siteConfig } from "@/lib/site-data";
@@ -14,10 +14,10 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="border-border/70 bg-background/85 sticky top-0 z-50 border-b backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <header className="border-border/60 bg-background/90 sticky top-0 z-50 border-b backdrop-blur-sm">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
         <Logo />
-        <nav className="hidden items-center gap-1 md:flex" aria-label="مسیرهای اصلی">
+        <nav className="hidden items-center gap-6 md:flex" aria-label="مسیرهای اصلی">
           {navLinks.map((link) => {
             const active = pathname === link.href;
             return (
@@ -25,10 +25,8 @@ export function SiteHeader() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
-                  active
-                    ? "bg-secondary text-foreground"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary/60",
+                  "text-xs font-medium transition-colors",
+                  active ? "text-foreground" : "text-muted-foreground hover:text-foreground",
                 )}
               >
                 {link.label}
@@ -37,15 +35,15 @@ export function SiteHeader() {
           })}
         </nav>
         <div className="flex items-center gap-2">
-          <Button asChild size="sm" className="hidden sm:inline-flex gap-1.5">
-            <Link href="/contact">
-              <Phone className="size-4" aria-hidden />
-              تماس
-            </Link>
-          </Button>
+          <Link
+            href="/contact"
+            className="text-muted-foreground hover:text-foreground hidden text-xs font-medium sm:inline"
+          >
+            تماس
+          </Link>
           <Button
             type="button"
-            variant="outline"
+            variant="ghost"
             size="icon"
             className="md:hidden"
             aria-expanded={open}
@@ -59,7 +57,7 @@ export function SiteHeader() {
       </div>
       {open ? (
         <div id="mobile-nav" className="border-border border-t px-4 pb-4 md:hidden">
-          <nav className="flex flex-col gap-1 pt-2" aria-label="منوی موبایل">
+          <nav className="flex flex-col gap-3 pt-4" aria-label="منوی موبایل">
             {navLinks.map((link) => {
               const active = pathname === link.href;
               return (
@@ -68,21 +66,15 @@ export function SiteHeader() {
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className={cn(
-                    "rounded-lg px-3 py-2.5 text-sm font-medium",
-                    active ? "bg-secondary" : "text-muted-foreground",
+                    "text-sm font-medium",
+                    active ? "text-foreground" : "text-muted-foreground",
                   )}
                 >
                   {link.label}
                 </Link>
               );
             })}
-            <Link
-              href="/contact"
-              onClick={() => setOpen(false)}
-              className="text-muted-foreground mt-1 px-3 text-xs"
-            >
-              {siteConfig.phone}
-            </Link>
+            <span className="text-muted-foreground text-xs">{siteConfig.phone}</span>
           </nav>
         </div>
       ) : null}

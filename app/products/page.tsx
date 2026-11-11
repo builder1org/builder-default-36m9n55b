@@ -12,8 +12,8 @@ export default function ProductsPage() {
     <main className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
       <SectionHeading
         title="محصولات"
-        description="لیست نمونه برای چیدمان فروشگاه؛ پس از تایید شما نام، قیمت و عکس واقعی جایگزین می‌شود."
-        className="mb-10"
+        description="فیلتر دایره‌ای دسته‌ها؛ جزئیات پس از تایید شما به‌روز می‌شود."
+        className="mb-12"
       />
       <Suspense fallback={<p className="text-muted-foreground text-sm">در حال بارگذاری…</p>}>
         <ProductCatalog />
