@@ -28,13 +28,13 @@ export function ProductDetail({ product }: ProductDetailProps) {
       </nav>
 
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-        <div className="border-border/80 relative aspect-[4/5] overflow-hidden rounded-3xl border bg-white lg:aspect-square lg:max-h-[32rem]">
+        <div className="border-border/80 bg-card relative aspect-[4/5] overflow-hidden rounded-3xl border lg:aspect-square lg:max-h-[32rem]">
           <div
             className={cn("absolute inset-0 bg-gradient-to-br opacity-60", product.hue)}
             aria-hidden
           />
           <div className="absolute inset-0 flex items-center justify-center p-8" aria-hidden>
-            <span className="border-border/60 h-40 w-28 rounded-2xl border-2 border-dashed bg-white/50 backdrop-blur-sm" />
+            <span className="border-border/60 bg-muted/40 h-40 w-28 rounded-2xl border-2 border-dashed backdrop-blur-sm" />
           </div>
           {product.badge ? (
             <span className="bg-primary text-primary-foreground absolute start-4 top-4 rounded-full px-3 py-1 text-xs font-semibold">

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fa" dir="rtl">
+    <html lang="fa" dir="rtl" className="dark" suppressHydrationWarning>
       <body className={`${vazirmatn.variable} font-sans antialiased`}>
         <CartProvider>
           <SiteHeader />

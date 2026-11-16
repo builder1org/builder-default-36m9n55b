@@ -38,7 +38,7 @@ export function ProductCatalog() {
               label="همه"
               active={active === allId}
               variant="store"
-              tint="bg-white"
+              tint="bg-card"
             />
           </li>
           {categories.map((cat) => (

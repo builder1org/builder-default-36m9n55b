@@ -8,7 +8,7 @@ export function QuickFilterChips() {
         <Link
           key={item.label}
           href={item.href}
-          className="border-border text-foreground hover:border-primary/40 shrink-0 rounded-full border bg-white px-4 py-2 text-xs font-medium transition-colors"
+          className="border-border bg-card text-foreground hover:border-primary/40 shrink-0 rounded-full border px-4 py-2 text-xs font-medium transition-colors"
         >
           {item.label}
         </Link>

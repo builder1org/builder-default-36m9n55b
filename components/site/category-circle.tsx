@@ -75,9 +75,9 @@ export function CategoryCircle({
 function ProductThumbDecor() {
   return (
   <div className="pointer-events-none absolute inset-0 flex items-center justify-center" aria-hidden>
-      <span className="absolute bottom-2 start-3 h-8 w-3.5 rotate-[-8deg] rounded-sm bg-white/80 shadow-sm" />
-      <span className="absolute bottom-2 start-8 h-9 w-4 rotate-6 rounded-sm bg-white/70 shadow-sm" />
-      <span className="absolute top-3 end-3 h-6 w-6 rounded-full bg-white/60 shadow-sm" />
+      <span className="bg-background/80 absolute bottom-2 start-3 h-8 w-3.5 rotate-[-8deg] rounded-sm shadow-sm" />
+      <span className="bg-background/70 absolute bottom-2 start-8 h-9 w-4 rotate-6 rounded-sm shadow-sm" />
+      <span className="bg-background/60 absolute top-3 end-3 h-6 w-6 rounded-full shadow-sm" />
     </div>
   );
 }

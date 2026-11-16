@@ -31,9 +31,9 @@
 }
 
 .dark {
-  --background: oklch(0.16 0.01 30);
-  --foreground: oklch(0.96 0.005 90);
-  --card: oklch(0.18 0.01 30);
+  --background: oklch(0.14 0.018 350);
+  --foreground: oklch(0.96 0.008 350);
+  --card: oklch(0.19 0.022 350);
   --card-foreground: oklch(0.96 0.005 90);
   --popover: oklch(0.18 0.01 30);
   --popover-foreground: oklch(0.96 0.005 90);
@@ -52,6 +52,8 @@
   --ring: oklch(0.72 0.16 350);
   --surface: var(--card);
   --surface-muted: var(--muted);
+  --store-gradient-top: oklch(0.21 0.035 350);
+  --store-gradient-mid: oklch(0.17 0.02 30);
 }
 
 @theme inline {
@@ -99,6 +101,9 @@
   }
   ::selection {
     background: oklch(0.58 0.21 350 / 0.22);
+  }
+  .dark ::selection {
+    background: oklch(0.72 0.16 350 / 0.35);
   }
 }
 
