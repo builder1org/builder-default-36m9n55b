@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+    <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12">
       <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-start">
         <SectionHeading
           eyebrow="داستان ما"
@@ -18,7 +18,7 @@ export default function AboutPage() {
           description={`${siteConfig.name} از یک نیاز ساده شروع شد: دسترسی آسان به لوازم آرایشی باکیفیت همراه با راهنمایی صادقانه. ما فضایی گرم برای امتحان رنگ، پرسش درباره پوست حساس و انتخاب هدیه مناسب فراهم کرده‌ایم.`}
         />
         <h1 className="sr-only">درباره {siteConfig.name}</h1>
-        <article className="border-border/80 bg-card space-y-6 rounded-3xl border p-6 shadow-sm sm:p-8">
+        <article className="border-border/80 bg-card/90 space-y-6 rounded-2xl border p-6 shadow-sm backdrop-blur-sm sm:p-8">
           <p className="leading-relaxed">
             در این نسخهٔ اولیهٔ وب‌سایت، متن و اطلاعات تماس به‌صورت placeholder هستند تا پس از
             گفت‌وگو با شما، با جزئیات واقعی فروشگاه پر شوند. تمرکز ما روی تجربهٔ خرید حضوری و

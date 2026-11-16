@@ -17,7 +17,7 @@ export default function ContactPage() {
         className="mb-10"
       />
       <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-        <aside className="border-border/80 bg-card space-y-5 rounded-3xl border p-6 shadow-sm sm:p-8">
+        <aside className="border-border/80 bg-card/90 space-y-5 rounded-2xl border p-6 shadow-sm backdrop-blur-sm sm:p-8">
           <h2 className="text-lg font-bold">اطلاعات فروشگاه</h2>
           <ul className="text-muted-foreground space-y-4 text-sm">
             <li className="flex gap-3">
@@ -38,7 +38,7 @@ export default function ContactPage() {
             </li>
           </ul>
         </aside>
-        <div className="border-border/80 bg-card rounded-3xl border p-6 shadow-sm sm:p-8">
+        <div className="border-border/80 bg-card/90 rounded-2xl border p-6 shadow-sm backdrop-blur-sm sm:p-8">
           <h2 className="mb-6 text-lg font-bold">فرم پیام</h2>
           <ContactForm />
         </div>

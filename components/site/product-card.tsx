@@ -14,7 +14,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
   return (
     <article className={cn("group", className)}>
       <Link href={href} className="flex flex-col gap-3">
-        <div className="border-border/70 bg-muted/20 relative aspect-[4/5] overflow-hidden rounded-2xl border transition group-hover:border-primary/25">
+        <div className="border-border/70 bg-card relative aspect-[4/5] overflow-hidden rounded-2xl border shadow-sm transition group-hover:border-primary/35 group-hover:shadow-md">
           <div
             className={cn("absolute inset-0 bg-gradient-to-b opacity-50", product.hue)}
             aria-hidden
